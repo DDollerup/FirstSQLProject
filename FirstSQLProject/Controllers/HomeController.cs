@@ -24,5 +24,17 @@ namespace FirstSQLProject.Controllers
             Members member = membersFac.Get(id);
             return View(member);
         }
+
+        public ActionResult AddMember()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddMemberSubmit(Members member)
+        {
+            membersFac.Add(member);
+            return RedirectToAction("Index");
+        }
     }
 }

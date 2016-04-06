@@ -97,5 +97,25 @@ namespace FirstSQLProject.Factory
 
             return member;
         }
+
+        public void Add(Members member)
+        {
+            string sqlQuery = "INSERT INTO Members" +
+                              "(Username, Password, Email, ProfileImage, GuildID) " +
+                              "VALUES" +
+                              "('" + member.Username + "', '" + member.Password + "', '" + member.Email + "','" + member.ProfileImage + "','" + member.GuildID + "')";
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            connection.Open();
+
+            SqlCommand cmd = new SqlCommand(sqlQuery, connection);
+
+            cmd.ExecuteNonQuery();
+
+            cmd.Dispose();
+            connection.Dispose();
+            connection.Close();
+        }
     }
 }
