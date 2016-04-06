@@ -18,5 +18,11 @@ namespace FirstSQLProject.Controllers
             List<Members> allMembers = membersFac.GetAll();
             return View(allMembers);
         }
+
+        public ActionResult ShowMember(int id)
+        {
+            Members member = membersFac.Get(id);
+            return View(member);
+        }
     }
 }

@@ -40,7 +40,7 @@ namespace FirstSQLProject.Factory
                 // Så opretter vi en midlertidig member reference
                 // Den bruges sådan at vi kan lagre den enkelte række af data
                 Members member = new Members();
-                
+
                 // Sætter Data'en
                 member.ID = (int)reader["ID"];
                 member.Username = (string)reader["Username"];
@@ -48,6 +48,8 @@ namespace FirstSQLProject.Factory
                 member.Email = (string)reader["Email"];
                 member.ProfileImage = (string)reader["ProfileImage"];
                 member.GuildID = (int)reader["GuildID"];
+
+                // DateTime d = DateTime.Parse((string)reader["Date"]);
 
                 // Tilføjer den enkelte Member til listen af allMembers
                 allMembers.Add(member);
@@ -60,6 +62,40 @@ namespace FirstSQLProject.Factory
 
             // Helt til sidst, sender vi vores liste af members tilbage
             return allMembers;
+        }
+
+        public Members Get(int id)
+        {
+            string sqlQuery = "SELECT * FROM Members WHERE ID = " + id;
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            connection.Open();
+
+            SqlCommand cmd = new SqlCommand(sqlQuery, connection);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            Members member = new Members();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    member.ID = (int)reader["ID"];
+                    member.Username = (string)reader["Username"];
+                    member.Password = (string)reader["Password"];
+                    member.Email = (string)reader["Email"];
+                    member.ProfileImage = (string)reader["ProfileImage"];
+                    member.GuildID = (int)reader["GuildID"];
+                }
+            }
+
+            cmd.Dispose();
+            connection.Dispose();
+            connection.Close();
+
+            return member;
         }
     }
 }
