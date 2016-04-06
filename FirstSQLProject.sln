@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstSQLProject", "FirstSQLProject\FirstSQLProject.csproj", "{8513CF54-01D8-4968-873C-7D96430141E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8513CF54-01D8-4968-873C-7D96430141E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8513CF54-01D8-4968-873C-7D96430141E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8513CF54-01D8-4968-873C-7D96430141E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8513CF54-01D8-4968-873C-7D96430141E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

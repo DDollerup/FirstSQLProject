@@ -1,0 +1,33 @@
+﻿@model List<FirstSQLProject.Models.BaseModel.Members>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@foreach (var member in Model)
+{
+    <h3>
+        @member.Username
+    </h3>
+    <hr />
+    <ul>
+        <li>
+            @member.ID
+        </li>
+        <li>
+            @member.Password
+        </li>
+        <li>
+            @member.Email
+        </li>
+        <li>
+            @member.ProfileImage
+        </li>
+        <li>
+            @member.GuildID
+        </li>
+    </ul>
+    <hr />
+}
