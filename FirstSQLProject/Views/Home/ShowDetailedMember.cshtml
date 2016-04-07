@@ -1,0 +1,41 @@
+﻿@model FirstSQLProject.Models.ViewModels.MemberWithGuild
+@{
+    ViewBag.Title = "ShowDetailedMember";
+}
+
+<h2>ShowDetailedMember</h2>
+
+<table class="table">
+    <tr>
+        <td>
+            Username:
+        </td>
+        <td>
+            @Model.Member.Username
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Password:
+        </td>
+        <td>
+            @Model.Member.Password
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Current GuildID:
+        </td>
+        <td>
+            @Model.Guild.ID
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Current Guild:
+        </td>
+        <td>
+            @Model.Guild.Name
+        </td>
+    </tr>
+</table>
