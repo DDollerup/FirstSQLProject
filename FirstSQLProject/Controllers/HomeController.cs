@@ -36,5 +36,19 @@ namespace FirstSQLProject.Controllers
             membersFac.Add(member);
             return RedirectToAction("Index");
         }
+
+        public ActionResult UpdateMember(int id)
+        {
+            Members memberToUpdate = membersFac.Get(id);
+            return View(memberToUpdate);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateMemberSubmit(Members member)
+        {
+            membersFac.Update(member);
+
+            return RedirectToAction("Index");
+        }
     }
 }

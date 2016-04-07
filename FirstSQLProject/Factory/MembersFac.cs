@@ -117,5 +117,24 @@ namespace FirstSQLProject.Factory
             connection.Dispose();
             connection.Close();
         }
+
+        public void Update(Members member)
+        {
+            string sqlQuery = "UPDATE Members SET " +
+                              "Username = '" + member.Username + "', Password = '" + member.Password + "', Email = '" + member.Email + "', ProfileImage = '" + member.ProfileImage + "', GuildID = '" + member.GuildID + "'" +
+                              "WHERE ID = " + member.ID;
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            connection.Open();
+
+            SqlCommand cmd = new SqlCommand(sqlQuery, connection);
+
+            cmd.ExecuteNonQuery();
+
+            cmd.Dispose();
+            connection.Dispose();
+            connection.Close();
+        }
     }
 }
