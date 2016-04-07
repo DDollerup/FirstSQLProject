@@ -50,5 +50,13 @@ namespace FirstSQLProject.Controllers
 
             return RedirectToAction("Index");
         }
+
+
+        public ActionResult DeleteMemberSubmit(int id)
+        {
+            membersFac.Delete(id);
+
+            return RedirectToAction("Index");
+        }
     }
 }

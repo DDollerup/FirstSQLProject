@@ -136,5 +136,22 @@ namespace FirstSQLProject.Factory
             connection.Dispose();
             connection.Close();
         }
+
+        public void Delete(int id)
+        {
+            string sqlQuery = "DELETE FROM Members WHERE ID = " + id;
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            connection.Open();
+
+            SqlCommand cmd = new SqlCommand(sqlQuery, connection);
+
+            cmd.ExecuteNonQuery();
+
+            cmd.Dispose();
+            connection.Dispose();
+            connection.Close();
+        }
     }
 }
