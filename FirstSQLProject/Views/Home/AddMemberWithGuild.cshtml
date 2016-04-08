@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "AddMemberWithGuild";
+}
+
+<h2>AddMemberWithGuild</h2>
+<hr />
+
+<form action="/Home/AddMemberWithGuildSubmit" method="post">
+    <table class="table">
+        <tr>
+            <td>
+                Username:
+            </td>
+            <td>
+                <input type="text" name="Username" placeholder="Type username..." />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Password:
+            </td>
+            <td>
+                <input type="password" name="Password" placeholder="Type password..." />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email:
+            </td>
+            <td>
+                <input type="email" name="Email" placeholder="Type email..." />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Profile Image:
+            </td>
+            <td>
+                <input type="text" name="Profile Image" placeholder="Type profile image..." />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Guild:
+            </td>
+            <td>
+                <select name="GuildID">
+                    <option value="0" selected="selected">
+                        Pick Guild...
+                    </option>
+                    @foreach (var guild in (ViewBag.Guilds as List<FirstSQLProject.Models.BaseModel.Guild>))
+                    {
+                        <option value="@guild.ID">
+                            @guild.Name
+                        </option>
+                    }
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Save" />
+            </td>
+        </tr>
+    </table>
+</form>

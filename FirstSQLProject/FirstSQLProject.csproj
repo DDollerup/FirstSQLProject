@@ -131,6 +131,8 @@
     <Content Include="Views\Home\UpdateMember.cshtml" />
     <Content Include="Views\Home\ShowDetailedMember.cshtml" />
     <Content Include="Views\Home\MembersWithGuild.cshtml" />
+    <Content Include="Views\Home\AddGuild.cshtml" />
+    <Content Include="Views\Home\AddMemberWithGuild.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -89,5 +89,31 @@ namespace FirstSQLProject.Controllers
 
             return View(lmg);
         }
+
+
+        public ActionResult AddGuild()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddGuildSubmit(Guild guild)
+        {
+            guildFac.Add(guild);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult AddMemberWithGuild()
+        {
+            ViewBag.Guilds = guildFac.GetAll();
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddMemberWithGuildSubmit(Members member)
+        {
+            membersFac.Add(member);
+            return RedirectToAction("Index");
+        }
     }
 }

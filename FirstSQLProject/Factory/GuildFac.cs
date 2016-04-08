@@ -92,7 +92,7 @@ namespace FirstSQLProject.Factory
 
         public void Add(Guild guild)
         {
-            string sqlQuery = "INSERT INTO Members" +
+            string sqlQuery = "INSERT INTO Guild" +
                               "(Name) " +
                               "VALUES" +
                               "('" + guild.Name + "')";
@@ -112,8 +112,8 @@ namespace FirstSQLProject.Factory
 
         public void Update(Guild guild)
         {
-            string sqlQuery = "UPDATE Members SET " +
-                              "Username = '" + guild.Name + "'" +
+            string sqlQuery = "UPDATE Guild SET " +
+                              "Name = '" + guild.Name + "'" +
                               "WHERE ID = " + guild.ID;
 
             SqlConnection connection = new SqlConnection(connectionString);
