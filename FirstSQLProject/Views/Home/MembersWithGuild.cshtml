@@ -1,0 +1,25 @@
+﻿@model FirstSQLProject.Models.ViewModels.ListOfMembersWithGuild
+@{
+    ViewBag.Title = "MembersWithGuild";
+}
+
+<h2>@Model.Guild.Name</h2>
+
+<p><strong>List of Members</strong></p>
+<hr />
+<table class="table">
+    @foreach (var member in Model.Members)
+    {
+        <tr>
+            <td>
+                User:
+            </td>
+            <td>
+                @member.Username
+            </td>
+            <td>
+                <a href="/Home/ShowMember/@member.ID">Read More...</a>
+            </td>
+        </tr>
+    }
+</table>

@@ -60,7 +60,11 @@ namespace FirstSQLProject.Controllers
 
             return RedirectToAction("Index");
         }
-
+        /// <summary>
+        /// Returns a View that clarifies a member with guild data
+        /// </summary>
+        /// <param name="id">Member ID</param>
+        /// <returns></returns>
         public ActionResult ShowDetailedMember(int id)
         {
             Members member = membersFac.Get(id);
@@ -71,6 +75,19 @@ namespace FirstSQLProject.Controllers
             mwg.Guild = guild;
 
             return View(mwg);
+        }
+
+        // id is GuildID
+        public ActionResult MembersWithGuild(int id)
+        {
+            Guild guild = guildFac.Get(id);
+            List<Members> membersWithGuild = membersFac.GetAllByGuildID(guild.ID);
+
+            ListOfMembersWithGuild lmg = new ListOfMembersWithGuild();
+            lmg.Guild = guild;
+            lmg.Members = membersWithGuild;
+
+            return View(lmg);
         }
     }
 }
